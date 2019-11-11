@@ -53,16 +53,17 @@ def sortedInsert(head, data):
     insert_node = DoublyLinkedListNode(data)
     cur = head
 
-    # Find the location that the node needs to be inserted to
+    # Insert at front of list
     if cur.data > insert_node.data:
        insert_node.next = cur
        cur.prev = insert_node
        return insert_node
 
+    # Iterate to location of list insertion 
     while cur.data < insert_node.data and cur.next != None:
-        # iterate through until node data is ahead
         cur = cur.next
 
+    # Location of node is determined, pointers adjusted
     if cur.data > insert_node.data or cur.next != None:
         prev = cur.prev
         prev.next = insert_node
@@ -70,6 +71,7 @@ def sortedInsert(head, data):
         insert_node.next = cur
         cur.prev = insert_node
         return head
+    # New node is inserted at the end of the list
     else:
         cur.next = insert_node
         insert_node.prev = cur
