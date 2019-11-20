@@ -7,19 +7,21 @@ import re
 import sys
 
 # Complete the getMinimumCost function below.
+
+
 def getMinimumCost(k, c):
-    sum = 0;
+    sum = 0
 
     if len(c) == k:
         for i in c:
             sum += i
         return sum
-    
+
     else:
         remainder = len(c) - k
         for i in range(remainder, len(c)):
             sum += c[i]
-        
+
         multiple = 2
 
         while remainder > k:
@@ -27,12 +29,13 @@ def getMinimumCost(k, c):
                 sum += c[i] * multiple
             multiple += 1
             remainder = remainder - k
-        
+
         if remainder > 0:
-            for i in range (0, remainder):
+            for i in range(0, remainder):
                 sum += c[i] * multiple
 
         return sum
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
