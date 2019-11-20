@@ -10,6 +10,8 @@ import sys
 def getMinimumCost(k, c):
     sum = 0;
 
+    # Flowers and customers are equal, buy all the flowers
+    # at the original price
     if len(c) == k:
         for i in c:
             sum += i
@@ -17,11 +19,15 @@ def getMinimumCost(k, c):
     
     else:
         remainder = len(c) - k
+        
+        # Buy most expensive flowers first
         for i in range(remainder, len(c)):
             sum += c[i]
         
         multiple = 2
 
+        # Continuing buying remaining flowers 
+        # most expensive first 
         while remainder > k:
             for i in range(remainder - k, remainder):
                 sum += c[i] * multiple
