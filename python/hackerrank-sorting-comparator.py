@@ -1,11 +1,13 @@
 from functools import cmp_to_key
+
+
 class Player:
     def __init__(self, name, score):
         self.name = name
         self.score = score
 
     def __repr__(self):
-        return "%d %d" %(self.name, self.score)
+        return "%d %d" % (self.name, self.score)
 
     # Define function that acts as a comparator with cmp_to_key
     def comparator(a, b):
@@ -28,7 +30,7 @@ for i in range(n):
     score = int(score)
     player = Player(name, score)
     data.append(player)
-    
+
 data = sorted(data, key=cmp_to_key(Player.comparator))
 for i in data:
     print(i.name, i.score)
