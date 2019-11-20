@@ -7,6 +7,8 @@ import re
 import sys
 
 # Complete the isValid function below.
+
+
 def isValid(s):
     char_count = {}
 
@@ -18,8 +20,8 @@ def isValid(s):
             char_count[c] = 1
 
     # Verify all counts are the same, or with one exception
-    count_check = char_count[s[0]] #intialize to a value
-    char_removed = False 
+    count_check = char_count[s[0]]  # intialize to a value
+    char_removed = False
     for c in char_count:
         if char_count[c] == count_check:
             continue
@@ -31,8 +33,10 @@ def isValid(s):
             char_removed = True
         else:
             return "NO"
-        
+
     return "YES"
+
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
