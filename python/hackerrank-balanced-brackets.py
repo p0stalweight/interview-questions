@@ -19,12 +19,12 @@ def isBalanced(s):
     left_bracket = "({["
     right_bracket = ")}]"
 
-    stack = [] 
+    stack = []
     balanced = True
     i = 0
 
     while balanced and i < len(s):
-        ch = s[i] 
+        ch = s[i]
         i += 1
 
         # Determine if character is a left or right bracket
@@ -50,6 +50,7 @@ def isBalanced(s):
         return "YES"
     else:
         return "NO"
+
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
