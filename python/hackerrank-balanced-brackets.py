@@ -8,7 +8,7 @@ import sys
 
 
 # Complete the isBalanced function below.
-# Print Yes if balanced, No if unbalanced
+# Print YES if balanced, NO if unbalanced
 def isBalanced(s):
 
     # String length must be even
